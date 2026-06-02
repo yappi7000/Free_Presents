@@ -12,22 +12,22 @@
     font-family: 'Noto Sans JP', sans-serif;
     background: #f5f5f0;
     color: #1a1a1a;
-    padding: 40px 20px;
+    padding: 20px 10px;
   }
 
   /* ===== 共通パーツ ===== */
-  .page { max-width: 760px; margin: 0 auto 80px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-  .page-header { padding: 36px 40px 28px; position: relative; }
-  .page-content { padding: 0 40px 40px; }
+  .page { max-width: 760px; margin: 0 auto 40px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .page-header { padding: 36px 24px 28px; position: relative; text-align: center; }
+  .page-content { padding: 0 24px 40px; }
 
   .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 999px; margin-bottom: 10px; }
-  .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
-  .page-subtitle { font-size: 14px; color: #666; line-height: 1.7; }
+  .page-title { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+  .page-subtitle { font-size: 13px; color: #666; line-height: 1.7; }
 
   .section { margin-bottom: 36px; }
   .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 6px; }
-  .section h2 { font-size: 20px; font-weight: 700; margin-bottom: 14px; line-height: 1.4; border-left: 4px solid #b45309; padding-left: 12px; }
-  .body-text { font-size: 15px; color: #333; line-height: 2.0; margin-bottom: 18px; text-align: justify; }
+  .section h2 { font-size: 18px; font-weight: 700; margin-bottom: 14px; line-height: 1.4; border-left: 4px solid #b45309; padding-left: 12px; }
+  .body-text { font-size: 14.5px; color: #333; line-height: 1.9; margin-bottom: 18px; text-align: justify; }
 
   .divider { border: none; border-top: 2px dashed #e0e0e0; margin: 36px 0; }
 
@@ -40,9 +40,9 @@
   .step-item { display: flex; gap: 14px; align-items: flex-start; background: #f9fafb; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; }
   .step-num { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; margin-top: 2px; }
   
-  /* リンクボタン */
-  .note-link { display: inline-block; margin-top: 12px; padding: 8px 16px; background: #fff; border: 1px solid #b45309; color: #b45309; font-size: 14px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
-  .note-link:hover { background: #b45309; color: #fff; }
+  /* note直リンクボタン（目立つゴールドデザイン） */
+  .note-link { display: inline-block; margin-top: 14px; padding: 12px 24px; background: linear-gradient(135deg, #b45309 0%, #d97706 100%); color: #fff; font-size: 14.5px; font-weight: 700; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(180,83,9,0.2); transition: all 0.2s; }
+  .note-link:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(180,83,9,0.3); }
 
   /* まとめボックス */
   .summary-box { border-radius: 14px; padding: 24px 28px; margin-top: 28px; }
@@ -58,16 +58,16 @@
   .theme-gold .summary-box { background: #fffbeb; border: 2px solid #fde68a; }
 
   .text-bold-gold { color: #b45309; font-weight: 700; }
-  .emphasis-text { font-size: 22px; font-weight: 700; color: #451a03; margin-bottom: 4px; display: block; letter-spacing: 0.05em; }
+  .emphasis-text { font-size: 20px; font-weight: 700; color: #451a03; margin-bottom: 4px; display: block; letter-spacing: 0.05em; }
 </style>
 </head>
 <body>
 
 <div class="page theme-gold">
   <div class="page-header">
-    <span class="badge">🎁 SPECIAL BONUS</span>
-    <h1 class="page-title">【期間限定】公式LINE限定の<br>豪華無料プレゼントのご案内</h1>
-    <p class="page-subtitle">私が20年かけて培った男磨きノウハウの結晶を、今だけすべて無料で差し上げます。</p>
+    <span class="badge">🎁 LINE FRIENDS PREMIUM</span>
+    <h1 class="page-title">公式LINE登録者限定<br>豪華無料プレゼントのご案内</h1>
+    <p class="page-subtitle">友だち追加ありがとうございます！私が20年かけて培った男磨きノウハウの結晶を、今すぐお受け取りください。</p>
   </div>
 
   <div class="page-content">
@@ -82,11 +82,9 @@
       </p>
     </div>
 
-    <!-- 強調カード -->
     <div class="card featured">
-      <span style="font-size: 14px; color: #451a03; display: block; margin-bottom: 8px; font-weight: 500;">公式LINEに登録するだけで、誰でも10秒で受取可能</span>
-      <span class="emphasis-text">【男磨きスタートダッシュ豪華3大特典】<br>完全無料で一挙大公開中！</span>
-      <span style="font-size: 14px; color: #451a03; display: block; margin-top: 8px; font-weight: 500;">以下の詳細を確認して、今すぐあなたのスマホで受け取ってください。👇</span>
+      <span class="emphasis-text">【男磨きスタートダッシュ豪華3大特典】<br>すべて無料で一挙大公開！</span>
+      <span style="font-size: 13.5px; color: #451a03; display: block; margin-top: 8px; font-weight: 500;">以下のリンクをタップして、今すぐあなたのスマホでお楽しみください。👇</span>
     </div>
 
     <hr class="divider">
@@ -94,36 +92,33 @@
     <div class="section">
       <div class="section-label">👑 プレゼント内容</div>
       <h2>あなたに劇的な変化をもたらす「大人気note記事トップ3」</h2>
-      <p class="body-text">公式LINEを追加した直後に、メッセージにて以下の厳選された有料級コンテンツを即座にお届けします。📱</p>
+      <p class="body-text">以下のボタンから、有料級の厳選コンテンツを今すぐその場でお読みいただけます。📱</p>
       
       <div class="step-list">
-        <!-- 第1位 -->
         <div class="step-item">
           <div class="step-num">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第1位】イケオジに必要なのはルックスじゃない｜女性が本当に惹かれる3要素</div>
-            <div style="font-size:14.5px; color:#333; line-height:1.8;">顔や年齢を言い訳にするのは今日で終わりです。女性が「この人は他の男と違う」と本能で惹かれてしまう、大人の男だけが醸し出せる『本当の魅力』の正体を暴きます。</div>
-            <a href="[https://yappi7000.github.io/21-Ikeoji_Looks/]" class="note-link">👉 記事を読む</a>
+            <div style="font-size:15.5px; font-weight:700; margin-bottom:8px; color:#451a03;">【第1位】イケオジに必要なのはルックスじゃない｜女性が本当に惹かれる3要素</div>
+            <div style="font-size:14px; color:#333; line-height:1.7;">顔や年齢を言い訳にするのは今日で終わりです。女性が「この人は他の男と違う」と本能で惹かれてしまう、大人の男だけが醸し出せる『本当の魅力』の正体を暴きます。</div>
+            <a href="https://yappi7000.github.io/21-Ikeoji_Looks/" target="_blank" class="note-link">🚀 今すぐこの記事を読む</a>
           </div>
         </div>
 
-        <!-- 第2位 -->
         <div class="step-item">
           <div class="step-num" style="background:#d1d5db; color:#1f2937;">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第2位】40代恋愛で「やってはいけない」7つのNG行動｜経験者が語る後悔集</div>
-            <div style="font-size:14.5px; color:#333; line-height:1.8;">男側が「よかれと思ってやっていること」が、実は女性をフェードアウトさせる最大の原因になっています。手遅れになる前に、自分がこの地雷を踏んでいないか今すぐ確認してください。</div>
-            <a href="[https://yappi7000.github.io/25-40Generetion-Love/]" class="note-link">👉 記事を読む</a>
+            <div style="font-size:15.5px; font-weight:700; margin-bottom:8px; color:#451a03;">【第2位】40代恋愛で「やってはいけない」7つのNG行動｜経験者が語る後悔集</div>
+            <div style="font-size:14px; color:#333; line-height:1.7;">男側が「よかれと思ってやっていること」が、実は女性をフェードアウトさせる最大の原因になっています。手遅れになる前に、自分がこの地雷を踏んでいないか今すぐ確認してください。</div>
+            <a href=""https://yappi7000.github.io/25-40Generetion-Love/target="_blank" class="note-link">🚀 今すぐこの記事を読む</a>
           </div>
         </div>
 
-        <!-- 第3位 -->
         <div class="step-item">
           <div class="step-num" style="background:#b45309; color:#fff;">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第3位】イケオジ化計画｜冴えない43歳サラリーマンが12ヶ月で変わった全記録</div>
-            <div style="font-size:14.5px; color:#333; line-height:1.8;">「今さら変われるはずがない」と思っていませんか？ 20年遠回りした私だからこそ断言できます、人はいつからでも変われます。どん底から這い上がったリアルな軌跡と、その具体策を全公開。</div>
-            <a href="[https://yappi7000.github.io/16-Ikeoji-Project/]" class="note-link">👉 記事を読む</a>
+            <div style="font-size:15.5px; font-weight:700; margin-bottom:8px; color:#451a03;">【第3位】イケオジ化計画｜冴えない43歳サラリーマンが12ヶ月で変わった全記録</div>
+            <div style="font-size:14px; color:#333; line-height:1.7;">「今さら変われるはずがない」と思っていませんか？ 20年遠回りした私だからこそ断言できます、人はいつからでも変われます。どん底から這い上がったリアルな軌跡と、その具体策を全公開。</div>
+            <a href="https://yappi7000.github.io/16-Ikeoji-Project/" target="_blank" class="note-link">🚀 今すぐこの記事を読む</a>
           </div>
         </div>
       </div>
@@ -132,25 +127,19 @@
     <hr class="divider">
 
     <div class="section">
-      <div class="section-label">👑 受取方法</div>
-      <h2>カンタン10秒！プレゼントを受け取る手順</h2>
+      <div class="section-label">⚙️ さらに追加の特典・システム連動</div>
+      <h2>自動配信システムからさらに特典を受け取る方法</h2>
       
       <div class="card" style="background:#fff;">
-        <div style="font-weight:700; font-size: 15px; margin-bottom:6px; color:#b45309;">🟩 STEP 1. 下にある「友だち追加」リンクをタップ</div>
-        <div style="font-size:14.5px;color:#444;line-height:1.8;">公式LINEの追加画面が立ち上がりますので、そのまま「追加」ボタンを押してください。</div>
-      </div>
-      
-      <div class="card" style="background:#fff;">
-        <div style="font-weight:700; font-size: 15px; margin-bottom:6px; color:#b45309;">🟩 STEP 2. トーク画面で【プレゼント】と2文字だけ送信</div>
-        <div style="font-size:14.5px;color:#444;line-height:1.8;">登録後、メッセージにカタカナで「プレゼント」とだけ打ち込んで送信してください。システムが即座に反応し、自動であなたの元へ3大特典のすべてをお送りします。</div>
+        <div style="font-weight:700; font-size: 15px; margin-bottom:6px; color:#b45309;">💬 トーク画面で【プレゼント】と2文字送信してください</div>
+        <div style="font-size:14px;color:#444;line-height:1.7;">一度この画面を閉じ、公式LINEのトーク画面に戻ってカタカナで「<b>プレゼント</b>」とだけ打ち込んで送信してください。追加の特別ファイルや、今後の限定案内が自動で即座に届きます。</div>
       </div>
     </div>
 
-    <!-- フッターまとめボックス -->
     <div class="summary-box">
       <div style="font-size:13px;font-weight:700;color:#b45309;margin-bottom:8px;">⚠️ 非常に重要なお知らせ</div>
-      <p style="font-size:14.5px;color:#451a03;line-height:1.9; font-weight: 500;">
-        この無料プレゼントは、私が一人ひとりに真摯に向き合うクオリティを維持するため、一定の登録人数に達し次第、**予告なく完全に配布を終了**させていただきます。後から「あの時に受け取っておけばよかった…」と20年分後悔しないよう、このチャンスを逃さず今すぐお受け取りください！
+      <p style="font-size:14px;color:#451a03;line-height:1.8; font-weight: 500;">
+        この限定プレゼントページは、一定の人数に達し次第、通知なく閉鎖または非公開とさせていただきます。ノウハウを新鮮なうちに吸収し、最速で成果を出してください！
       </p>
     </div>
 
