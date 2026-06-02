@@ -35,10 +35,14 @@
   .card { border-radius: 12px; padding: 20px; margin-bottom: 16px; background: #fffbeb; border: 1px solid #fde68a; }
   .card.featured { background: #fef3c7; border: 2px solid #b45309; text-align: center; padding: 26px 20px; }
 
-  /* 番号付きステップ */
-  .step-list { display: flex; flex-direction: column; gap: 16px; margin-top: 18px; }
-  .step-item { display: flex; gap: 14px; align-items: flex-start; background: #f9fafb; padding: 18px; border-radius: 12px; border: 1px solid #f3f4f6; }
-  .step-num { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  /* 特典リスト用 */
+  .step-list { display: flex; flex-direction: column; gap: 20px; margin-top: 18px; }
+  .step-item { display: flex; gap: 14px; align-items: flex-start; background: #f9fafb; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; }
+  .step-num { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; margin-top: 2px; }
+  
+  /* リンクボタン */
+  .note-link { display: inline-block; margin-top: 12px; padding: 8px 16px; background: #fff; border: 1px solid #b45309; color: #b45309; font-size: 14px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+  .note-link:hover { background: #b45309; color: #fff; }
 
   /* まとめボックス */
   .summary-box { border-radius: 14px; padding: 24px 28px; margin-top: 28px; }
@@ -89,29 +93,37 @@
 
     <div class="section">
       <div class="section-label">👑 プレゼント内容</div>
-      <h2>あなたに劇的な変化をもたらす「3大特典」の全貌</h2>
-      <p class="body-text">公式LINEを追加した直後に、メッセージにて以下のすべてを即座にお届けします。📱</p>
+      <h2>あなたに劇的な変化をもたらす「大人気note記事トップ3」</h2>
+      <p class="body-text">公式LINEを追加した直後に、メッセージにて以下の厳選された有料級コンテンツを即座にお届けします。📱</p>
       
       <div class="step-list">
+        <!-- 第1位 -->
         <div class="step-item">
-          <div class="step-num">1</div>
+          <div class="step-num">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:6px; color:#451a03;">📘 特典①：大人の男磨き・最速完全マスターバイブル（徹底解説PDF）</div>
-            <div style="font-size:14.5px; color:#444; line-height:1.8;">「結局、何から手をつければいいんだ？」という疑問を1発で解消します。大人の男性が最も効率よく、圧倒的な清潔感と揺るぎない自信を最速で身につけるためのステップバイステップのロードマップです。</div>
+            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第1位】イケオジに必要なのはルックスじゃない｜女性が本当に惹かれる3要素</div>
+            <div style="font-size:14.5px; color:#333; line-height:1.8;">顔や年齢を言い訳にするのは今日で終わりです。女性が「この人は他の男と違う」と本能で惹かれてしまう、大人の男だけが醸し出せる『本当の魅力』の正体を暴きます。</div>
+            <a href="[https://yappi7000.github.io/21-Ikeoji_Looks/]" class="note-link">👉 記事を読む</a>
           </div>
         </div>
+
+        <!-- 第2位 -->
         <div class="step-item">
-          <div class="step-num">2</div>
+          <div class="step-num" style="background:#d1d5db; color:#1f2937;">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:6px; color:#451a03;">🎬 特典②：【限定公開】自己流の罠を脱出し最短で突き抜ける解説動画</div>
-            <div style="font-size:14.5px; color:#444; line-height:1.8;">私が20年間も遠回りし、泥沼にはまって抜け出せなかった「本質的な原因」を赤裸々に語ります。これを観るだけで、世間の間違ったモテ情報に騙されない「本物の男のマインドセット」が1日でインストールされます。</div>
+            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第2位】40代恋愛で「やってはいけない」7つのNG行動｜経験者が語る後悔集</div>
+            <div style="font-size:14.5px; color:#333; line-height:1.8;">男側が「よかれと思ってやっていること」が、実は女性をフェードアウトさせる最大の原因になっています。手遅れになる前に、自分がこの地雷を踏んでいないか今すぐ確認してください。</div>
+            <a href="[https://yappi7000.github.io/25-40Generetion-Love/]" class="note-link">👉 記事を読む</a>
           </div>
         </div>
+
+        <!-- 第3位 -->
         <div class="step-item">
-          <div class="step-num">3</div>
+          <div class="step-num" style="background:#b45309; color:#fff;">👑</div>
           <div class="step-content">
-            <div style="font-size:16px; font-weight:700; margin-bottom:6px; color:#451a03;">💬 特典③：やっぴー直伝！1対1個別チャット相談権利（初回限定）</div>
-            <div style="font-size:14.5px; color:#444; line-height:1.8;">悩みや現在の状況、年齢、目指す理想の姿は人それぞれ違います。テンプレートの回答ではなく、あなたの今の状況やリアルな悩みを直接伺い、私が個別に具体的かつ実践的なアドバイスをメッセージにてお答えします。</div>
+            <div style="font-size:16px; font-weight:700; margin-bottom:8px; color:#451a03;">【第3位】イケオジ化計画｜冴えない43歳サラリーマンが12ヶ月で変わった全記録</div>
+            <div style="font-size:14.5px; color:#333; line-height:1.8;">「今さら変われるはずがない」と思っていませんか？ 20年遠回りした私だからこそ断言できます、人はいつからでも変われます。どん底から這い上がったリアルな軌跡と、その具体策を全公開。</div>
+            <a href="[https://yappi7000.github.io/16-Ikeoji-Project/]" class="note-link">👉 記事を読む</a>
           </div>
         </div>
       </div>
@@ -138,7 +150,7 @@
     <div class="summary-box">
       <div style="font-size:13px;font-weight:700;color:#b45309;margin-bottom:8px;">⚠️ 非常に重要なお知らせ</div>
       <p style="font-size:14.5px;color:#451a03;line-height:1.9; font-weight: 500;">
-        この無料プレゼントおよび個別チャット相談は、私が一人ひとりに真摯に向き合うクオリティを維持するため、一定の登録人数に達し次第、**予告なく完全に配布を終了**させていただきます。後から「あの時に受け取っておけばよかった…」と20年分後悔しないよう、このチャンスを逃さず今すぐお受け取りください！
+        この無料プレゼントは、私が一人ひとりに真摯に向き合うクオリティを維持するため、一定の登録人数に達し次第、**予告なく完全に配布を終了**させていただきます。後から「あの時に受け取っておけばよかった…」と20年分後悔しないよう、このチャンスを逃さず今すぐお受け取りください！
       </p>
     </div>
 
