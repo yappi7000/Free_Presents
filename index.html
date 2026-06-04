@@ -3,63 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>【限定公開】大人気記事トップ3｜イケオジ化バイブル</title>
+<title>【プレミアム限定】大人気記事トップ3｜イケオジ化バイブル</title>
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy-deep: #16264c; 
-    --gold-bdr:  #d4b28c; 
-    --bg-light:  #fcfbfa; 
-    --text:      #111111; 
-    --bg:        #f2f4f7;
-    --marker:    #f2dec9;
+    /* ロイヤル＆ゴールドの配色 */
+    --royal-bg:  #111827; /* 深いロイヤルブルー/ネイビー */
+    --panel-1:   #600e1b; /* 深いボルドー（1位） */
+    --panel-2:   #1a472a; /* 深いグリーン（2位） */
+    --panel-3:   #0f3460; /* 深いブルー（3位） */
+    --gold:      #e2c686; /* 高級感のあるゴールド */
+    --gold-dim:  #b59a61; /* くすんだゴールド */
+    --text-main: #fcfbfa; /* ほぼ白（読みやすさ重視） */
+    --text-warn: #ef4444; /* 鮮やかな赤（警告） */
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Klee One', 'YuMincho', 'Hiragino Mincho ProN', serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--royal-bg);
+    color: var(--text-main);
     min-height: 100vh;
     line-height: 2.0; 
     letter-spacing: 0.05em; 
     font-weight: 600;
   }
-  .wrapper { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
-  .main-card { background: #ffffff; border: 1px solid #e2e2da; border-radius: 12px; padding: 40px 30px; box-shadow: 0 6px 20px rgba(22,38,76,0.04); }
+  .wrapper { max-width: 760px; margin: 0 auto; padding: 50px 20px 80px; }
+  .main-card { background: rgba(255,255,255,0.03); border: 2px solid var(--gold-dim); border-radius: 16px; padding: 60px 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
   
-  .top-header { text-align: center; margin-bottom: 35px; }
-  .top-tag { display: inline-block; background-color: var(--navy-deep); color: #fff; font-size: 12px; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; letter-spacing: 2px; }
-  .top-title { font-size: 22px; color: var(--navy-deep); line-height: 1.4; }
+  /* ヘッダーエリア（インパクト重視） */
+  .top-header { text-align: center; margin-bottom: 50px; }
+  .top-tag { display: inline-block; background-color: transparent; color: var(--gold); font-size: 14px; padding: 6px 20px; border-radius: 30px; margin-bottom: 15px; letter-spacing: 3px; border: 1px solid var(--gold); }
+  .top-title { font-size: 26px; color: var(--gold); line-height: 1.4; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+  .top-sub { text-align: center; font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 10px; }
 
-  /* アコーディオン設定 */
-  .accordion-item { border: 1px solid var(--gold-bdr); border-radius: 6px; margin-bottom: 18px; overflow: hidden; background: #fff; }
-  .accordion-trigger { width: 100%; background: var(--bg-light); border: none; outline: none; padding: 20px; text-align: left; font-family: 'Klee One', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center; line-height: 1.5; transition: background 0.2s; }
-  .accordion-trigger:hover { background: #f5f0ea; }
-  .accordion-trigger::after { content: '▼'; font-size: 12px; color: var(--gold-bdr); transition: transform 0.3s; }
+  /* アコーディオン設定（色鮮やかなパネル） */
+  .accordion-item { border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s; }
+  .accordion-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
   
-  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #ffffff; }
-  .accordion-inner { padding: 25px 20px; border-top: 1px solid #eee; }
+  .accordion-trigger { width: 100%; border: none; outline: none; padding: 25px; text-align: left; font-family: 'Klee One', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; line-height: 1.5; color: var(--text-main); transition: background 0.3s; }
+  
+  /* パネルごとの配色 */
+  .item-1 .accordion-trigger { background-color: var(--panel-1); }
+  .item-2 .accordion-trigger { background-color: var(--panel-2); }
+  .item-3 .accordion-trigger { background-color: var(--panel-3); }
+  
+  .accordion-trigger::after { content: '▼'; font-size: 14px; color: rgba(255,255,255,0.5); transition: transform 0.3s; }
+  
+  /* タップ展開時 */
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: rgba(0,0,0,0.2); }
+  .accordion-inner { padding: 30px 25px; border-top: 1px solid rgba(255,255,255,0.05); }
   .accordion-item.active .accordion-trigger::after { transform: rotate(-180deg); }
-  .accordion-item.active .accordion-content { max-height: 2000px; transition: max-height 0.5s ease-in; }
+  .accordion-item.active .accordion-content { max-height: 2000px; transition: max-height 0.6s ease-in; }
 
-  p { font-size: 15.5px; margin-bottom: 24px; text-align: justify; }
-  b, strong { font-weight: 600; background: linear-gradient(transparent 60%, var(--marker) 0%); color: #000000; padding: 0 2px; }
-  .article-sub { font-size: 17px; color: var(--navy-deep); margin: 30px 0 15px; border-left: 4px solid var(--gold-bdr); padding-left: 10px; line-height: 1.4; }
+  p { font-size: 16px; margin-bottom: 28px; text-align: justify; color: rgba(255,255,255,0.9); }
+  b, strong { font-weight: 600; background: linear-gradient(transparent 70%, rgba(226,198,134,0.3) 0%); color: #fff; padding: 0 2px; }
+  .article-sub { font-size: 18px; color: var(--gold); margin: 35px 0 18px; border-left: 5px solid var(--gold); padding-left: 12px; line-height: 1.4; }
   
-  /* 最下部エリア */
-  .footer-cta { margin-top: 45px; padding-top: 30px; border-top: 2px dashed var(--gold-bdr); }
-  .dashed-box { background-color: var(--bg-light); border: 1px dashed var(--gold-bdr); padding: 24px; border-radius: 4px; margin-bottom: 35px; }
-  
-  /* LINEプレゼント案内ボックス */
-  .present-box { background-color: #fffdf9; border: 1px solid #ebdcc5; border-radius: 8px; padding: 25px; margin-top: 40px; box-shadow: 0 4px 12px rgba(212,178,140,0.1); }
-  .present-title { font-size: 16px; color: #8e5b23; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
-  
-  .btn-container { text-align: center; margin: 40px 0 20px; }
-  .cta-button { display: inline-block; background-color: var(--navy-deep); color: #ffffff; font-size: 18px; font-weight: 600; text-decoration: none; padding: 18px 30px; border-radius: 4px; box-shadow: 0 4px 15px rgba(22,38,76,0.25); transition: all 0.3s ease; width: 95%; max-width: 520px; box-sizing: border-box; line-height: 1.5; font-family: 'Klee One', sans-serif; }
-  .cta-button:hover { background-color: #0d1833; transform: translateY(-1px); }
-  .btn-sub { font-size: 11.5px; font-weight: normal; display: block; opacity: 0.9; margin-bottom: 5px; }
+  /* 最下部CTAエリア（強烈なインパクト） */
+  .footer-cta { margin-top: 60px; padding-top: 40px; border-top: 2px dashed rgba(226,198,134,0.3); }
+  .dashed-box { background-color: rgba(255,255,255,0.03); border: 1px dashed var(--gold); padding: 30px; border-radius: 8px; margin-bottom: 40px; }
+  .btn-container { text-align: center; margin: 50px 0 30px; }
+  .cta-button { display: inline-block; background: linear-gradient(135deg, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); color: #000; font-size: 20px; font-weight: 800; text-decoration: none; padding: 22px 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(248,181,0,0.4); transition: all 0.3s; width: 100%; max-width: 550px; box-sizing: border-box; line-height: 1.4; font-family: sans-serif; letter-spacing: 1px; }
+  .cta-button:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(248,181,0,0.6); }
+  .btn-sub { font-size: 12px; font-weight: normal; display: block; opacity: 0.8; margin-bottom: 6px; color: #000; }
 
-  @media (max-width: 576px) { .wrapper { padding: 20px 10px 40px; } .main-card { padding: 30px 15px; } .top-title { font-size: 19px; } .accordion-trigger { font-size: 14.5px; padding: 15px; } p { font-size: 15px; } .cta-button { width: 100%; font-size: 16px; } }
+  /* LINEプレゼント誘導（ゴシック体・視認性MAX） */
+  .present-box { background-color: #0a0e17; border: 2px solid var(--gold); border-radius: 12px; padding: 30px; margin-top: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); font-family: sans-serif; }
+  .present-title { font-size: 18px; font-weight: bold; color: var(--gold); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+  .present-method { font-size: 18px; font-weight: bold; color: var(--gold); margin-bottom: 15px; }
+  .present-text { font-size: 15px; line-height: 1.8; color: #fcfbfa; text-align: justify; }
+
+  @media (max-width: 576px) { .wrapper { padding: 30px 10px 50px; } .main-card { padding: 40px 15px; } .top-title { font-size: 22px; } .accordion-trigger { font-size: 15.5px; padding: 20px; } p { font-size: 15px; } .cta-button { width: 100%; font-size: 17px; } }
 </style>
 </head>
 <body>
@@ -67,108 +81,85 @@
 <div class="wrapper">
   <div class="main-card">
 
-    <!-- ヘッダー -->
+    <!-- ヘッダー（プレミアム感） -->
     <div class="top-header">
-      <span class="top-tag">OFFICIAL LINE PREMIUM</span>
+      <span class="top-tag">PREMIUM ACCESS ONLY</span>
       <h1 class="top-title">👑 大人気記事トップ3 👑</h1>
-      <p style="text-align: center; font-size: 13px; color: #666; margin-top: 5px;">＼ 読みたい記事をタップして開封してください ／</p>
+      <p class="top-sub">＼ 読みたい記事をタップして開封してください ／</p>
     </div>
 
-    <!-- アコーディオン -->
+    <!-- アコーディオン（カラフルなパネル） -->
     <div class="accordion-container">
 
-      <!-- 第1位 -->
-      <div class="accordion-item">
+      <!-- 第1位（ボルドー） -->
+      <div class="accordion-item item-1">
         <button class="accordion-trigger">🥇 【第1位】ルックスを磨いても「3回目」で切られる男の盲点</button>
         <div class="accordion-content">
           <div class="accordion-inner">
             <p>「もう若くないから」「顔が特別イケメンじゃないから」と、恋愛を諦める言い訳にしていませんか？</p>
-            <p>結論から言います。大人の女性が40代・50代の男性に求めているのは、生まれ持ったルックスの良さでは一切ありません。外見をどれだけ磨いても、なぜか「3回目のデート」でいつもフェードアウトされてしまう男には、決定的な盲点があります。</p>
-            <p>女性が本能レベルで「この人は他の男と違う、また会いたい」と惹かれてしまう大人の魅力には、明確な<strong>3つの要素</strong>があります。</p>
+            <p>結論から言います。大人の女性が求めているのは、生まれ持ったルックスの良さでは一切ありません。外見を磨いても、なぜか「3回目のデート」でフェードアウトされてしまう男には、致命的な盲点があります。</p>
+            <p>女性が惹かれてしまう大人の魅力には、明確な<strong>3つの要素</strong>があります。</p>
             
             <h4 class="article-sub">💡 要素①：徹底的に管理された「清潔感」</h4>
-            <p>服のシワ、靴の汚れ、髪型、精度を高めた<strong>「加齢臭や体臭のケア」</strong>。大人の女性の鼻は非常に敏感です。肌のスキンケアや下着の管理にまで気を配る「徹底的な自己管理能力」こそが、大人のルックスの正体です。</p>
+            <p>服のシワ、髪型、そして何より<strong>「加齢臭や体臭のケア」</strong>。肌のスキンケアや下着の管理にまで気を配る「徹底的な自己管理能力」こそが、大人のルックスの正体です。</p>
             
             <h4 class="article-sub">💡 要素②：自分の話をしない「圧倒的な聞く余裕」</h4>
-            <p>モテない男性ほどデートで「自分の凄さ」をアピールしようと喋りすぎますが、これは焦りや子どもっぽさとして映ります。本当に惹かれるイケオジは会話の比率を<strong>「自分が3割、相手が7割」</strong>に保ち、大人の包容力を見せます。</p>
+            <p>本当に惹かれるイケオジは会話の比率を<strong>「自分が3割、相手が7割」</strong>に保ちます。相手の話を否定せず、じっくりと楽しそうに聞く「包容力」こそが大人の武器になります。</p>
             
             <h4 class="article-sub">💡 要素③：関係を焦らない「引き算の引き込み論」</h4>
-            <p>「早く付き合いたい」という下心や焦りは行動の節々ににじみ出ます。大人の魅力を醸し出す男は、むしろ<strong>一歩引いた絶妙な心の距離感</strong>を保ちます。この余裕が女性の狩猟本能を刺激し、「もっとこの人のことを知りたい」と夢中にさせるのです。</p>
+            <p>下心や焦りは行動の節々ににじみ出ます。短気で余裕のない態度は、大人の女性を冷めさせます。むしろ一歩引いた絶妙な距離感が、夢中にさせるのです。</p>
           </div>
         </div>
       </div>
 
-      <!-- 第2位 -->
-      <div class="accordion-item">
-        <button class="accordion-trigger">🥈 【第2位】大人の恋愛で「絶対にやってはいけない」7つのNG地雷行動</button>
+      <!-- 第2位（グリーン） -->
+      <div class="accordion-item item-2">
+        <button class="accordion-trigger">🥈 【第2位】大人の恋愛で「絶対にやってはいけない」7つの地雷行動</button>
         <div class="accordion-content">
           <div class="accordion-inner">
-            <p>40代・50代の恋愛失敗に共通していること。それは<strong>「過去の失敗パターンから学んでいない」</strong>ことです。多くの男性が無自覚に踏んでしまっている地雷を知り、3回目のデートで切られる致命的な減点を防いでください。</p>
-            
-            <p>❌ <b>NG①：初期の「重すぎる自己開示」</b><br>初回から離婚・病気・過去の苦労話を全開示するのは重すぎます。自己開示の量はまず<strong>「全体の30%」</strong>に抑えるのが大人の鉄則です。</p>
-            <p>❌ <b>NG②：付き合う前からの「毎日LINEの強要」</b><br>関係が浅い段階からの毎日の連絡は逆効果。付き合う前のLINEは<strong>「週3回以内」</strong>に抑え、大人の余裕を見せましょう。</p>
-            <p>❌ <b>NG③：「すぐ関係を確定しようとする」</b><br>3回目のデートで「俺たちってどういう関係？」と焦って白黒つけるのはNG。関係の定義は<strong>「最低5回会ってから」</strong>が安全圏です。</p>
-            <p>❌ <b>NG④：過去の恋愛と比べる</b><br>「前の女はこうだった」は最も嫌われる言葉。目の前の彼女だけを真っ直ぐに見ること。</p>
-            <p>❌ <b>NG⑤：子どもっぽい嫉妬・束縛</b><br>友人との食事を制限したり、探りを入れる行動は、器の小ささを一瞬で露呈させます。</p>
-            <p>❌ <b>NG⑥：感情的な別れ際</b><br>怒鳴る、責める、女々しく泣き崩れる。男の人格は<strong>「別れ際」</strong>にすべてが出ます。</p>
-            <p>❌ <b>NG⑦：SNSでの晒しや愚痴</b><br>別れた後に元カノの愚痴を匂わせる発信は絶対にNG。その器の狭さは必ず自分に返ってきます。</p>
+            <p>多くの男性が無自覚に踏んでしまっている地雷を知り、致命的な減点を防いでください。</p>
+            <p>❌ NG①：初期の「重すぎる自己開示」<br>❌ NG②：付き合う前からの「毎日LINEの強要」<br>❌ NG③：「すぐに関係を確定しようとする」<br>❌ NG④：過去の恋愛と比べる<br>❌ NG⑤：子どもっぽい嫉妬・束縛<br>❌ NG⑥：感情的な別れ際<br>❌ NG⑦：SNSでの晒しや愚痴</p>
           </div>
         </div>
       </div>
 
-      <!-- 第3位 -->
-      <div class="accordion-item">
-        <button class="accordion-trigger">🥉 【第3位】イケオジ化計画｜冴えない43歳サラリーマンの12ヶ月全記録</button>
+      <!-- 第3位（ブルー） -->
+      <div class="accordion-item item-3">
+        <button class="accordion-trigger">🥉 【第3位】イケオジ化計画｜普通のサラリーマンの12ヶ月全記録</button>
         <div class="accordion-content">
           <div class="accordion-inner">
-            <p>地雷の避け方が分かれば、あとは「選ばれる男」へとステップを上がっていく句だけです。<strong>12ヶ月で、人は別人になれる。</strong>そのリアルな軌跡を公開します。</p>
-            <p>👤 <b>【スタート時の現実】</b><br>43歳、普通のサラリーマン。体重82kg、服はサイズ感無視のユニクロのみ、マッチングアプリは3ヶ月でデート0回。ここから激変しました。</p>
-            
-            <h4 class="article-sub">✨ 1〜3ヶ月目：外見改革</h4>
-            <p>美容院でのイメチェンを毎月固定し、ジャストサイズの服と靴へ総買い替え。加齢臭対策を徹底し、まずは<strong>「見た目の垢抜け」</strong>を最優先. ➔ 体重-3kg、マッチング数が倍増。</p>
-            
-            <h4 class="article-sub">💪 4〜6ヶ月目：習慣・インナー改革</h4>
-            <p>毎朝30分のウォーキングと週3回の体幹トレ。月3冊の読書を習慣化し、酒量を半分へ。➔ 体重さらに-2kg。<strong>「自分が変わっている」という実感が圧倒的な自信</strong>へ。</p>
-            
-            <h4 class="article-sub">🗣️ 7〜9ヶ月目：コミュニケーション改革</h4>
-            <p>「自分が話す」を捨て、<strong>「相手に話させる（聞く）」</strong>会話へ全面シフト。➔ コミュニティで「話しやすい大人の男」として認知。</p>
-            
-            <h4 class="article-sub">💕 10〜12ヶ月目：恋愛行動</h4>
-            <p>プロフィールを全面リニューアルし月5人と会う行動。➔ マッチング数が月20件へ爆増。<strong>デート成功率は驚異の60%超え</strong>を記録し、12ヶ月目に極上の交際がスタート。</p>
+            <p>地雷の避け方が分かれば、あとはステップを上がっていくだけです。普通のサラリーマンが別人に生まれ変わったリアルな軌跡。</p>
+            <p>✨ 1〜3ヶ月目：外見改革<br>💪 4〜6ヶ月目：習慣改革<br>🗣️ 7〜9ヶ月目：コミュニケーション改革<br>💕 10〜12ヶ月目：恋愛行動</p>
           </div>
         </div>
       </div>
 
     </div> <!-- アコーディオン終了 -->
 
-    <!-- 全体共通の最下部CVエリア -->
+    <!-- 最下部CVエリア（強烈なインパクト） -->
     <div class="footer-cta">
-      <h3 class="article-sub" style="border-left-color: #cc0000; color: #cc0000; margin-top: 0;">⚠️ 残酷ですが、これらを磨くだけでは「3回目」で終わります</h3>
+      <h3 class="article-sub" style="border-left-color: var(--text-warn); color: var(--text-warn); font-size: 20px;">⚠️ 残酷ですが、これらを磨くだけでは失敗します</h3>
       <div class="dashed-box">
-        <p style="margin: 0; font-weight: bold; text-align: justify;">
-          外見を整え、地雷を避け、どれだけイケオジとしての魅力を高めたとしても……<br><br>
-          デートの中で大人の女性を<strong>「無自覚に減点させてしまう本当の理由」</strong>を知らなければ、すべての努力は水の泡となり、また「3回目のデート」で静かに去られます。
+        <p style="margin: 0; font-weight: bold; color: #fff;">
+          デートの中で大人の女性を<strong>「無自覚に減点させてしまう本当の理由」</strong>を知らなければ、すべての努力は水の泡となり、また「3回目のデート」で去られます。
         </p>
       </div>
-      <p>大人の女性は怒りません。不満も指摘もしてくれない。ただ、男側が気づかないうちに地雷を踏んでいるから、限界を超えたある日、黙って去っていくのです。</p>
-      <p>もう二度と、あの切ない自然消滅の苦しみを繰り返したくないなら、私が20年の後悔を経て書き上げた「答えのすべて」を今すぐ受け取ってください。</p>
+      <p>もう二度と、あの切ないフェードアウトの苦しみを繰り返したくないなら、私が書き上げた「答えのすべて」を今すぐ受け取ってください。</p>
 
-      <!-- 本編への誘導ボタン -->
+      <!-- 強烈に目立つゴールドボタン -->
       <div class="btn-container">
         <a href="https://yappi7000.github.io/3kaideOwaru-_Otoko/" class="cta-button">
-          <span class="btn-sub">＼クリックして本編の無料エリアを読む／</span>
-          📖 『3回で終わる男、続く男』本編バイブルへ
+          <span class="btn-sub">＼クリックして今すぐ本編の無料エリアを読む／</span>
+          🔰 『3回で終わる男、続く男』本編バイブルへ
         </a>
       </div>
 
-      <!-- 🎁 追加の特典・システム連動エリア（キーワード指定版に最適化） -->
+      <!-- 🎁 プレゼント誘導（ゴシック体・視認性MAX） -->
       <div class="present-box">
-        <div class="present-title">🌟 さらに追加の特典・システム連動</div>
-        <p style="font-size: 16px; font-weight: bold; color: #8e5b23; margin-bottom: 10px;">自動配信システムからさらに特典を受け取る方法</p>
-        
-        <p style="font-size: 14.5px; line-height: 1.8; margin-bottom: 0;">
-          💬 <strong>トーク画面でキーワード【プレゼント】を送信してください</strong><br>
-          一度この画面を閉じ、公式LINEのトーク画面に戻って<strong>「プレゼント」</strong>というキーワードをそのまま打ち込んで送信してください。追加の特別ファイル<strong>【女性が静かに去る男チェックリスト30】</strong>が自動で即座に届きます。
+        <div class="present-title">🌟 LINEシステムと連動して追加特典を受け取る</div>
+        <p class="present-method">トーク画面でキーワード【プレゼント】を送信してください</p>
+        <p class="present-text">
+          一度この画面を閉じ、公式LINEのトーク画面に戻って<strong>「プレゼント」</strong>と送信してください。特別ファイル<strong>【女性が静かに去る男チェックリスト30】</strong>が即座に届きます。
         </p>
       </div>
 
@@ -178,9 +169,18 @@
 </div>
 
 <script>
+  // アコーディオンの制御
   document.querySelectorAll('.accordion-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const item = trigger.parentElement;
+      
+      // 他のパネルを閉じる（オプション）
+      document.querySelectorAll('.accordion-item').forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
       item.classList.toggle('active');
     });
   });
